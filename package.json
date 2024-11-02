@@ -1,0 +1,38 @@
+{
+  "name": "retro-green-theme-vscode",
+  "displayName": "Retro Green Theme",
+  "description": "A nostalgic theme inspired by vintage green monitor, binging a classic look to your VS CODE",
+  "version": "0.0.1",
+  "publisher": "LelinPadhan",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "color-theme",
+    "retro",
+    "green",
+    "vintage",
+    "monitor",
+    "classic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lelin07/retro-green-vscode-theme.git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "retro-green-theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/retro-green-theme-color-theme.json"
+      }
+    ]
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
+  }
+}
