@@ -21,8 +21,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lelin07/retro-green-vscode-theme.git"
+    "url": "git+https://github.com/Lelin07/retro-green-theme.git"
   },
+  "icon": "assets/icon.png",
   "contributes": {
     "themes": [
       {
