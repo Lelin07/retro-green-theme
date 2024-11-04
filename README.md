@@ -1,12 +1,9 @@
 # Retro Green Theme
 
-Retro Green Theme is a nostalgic theme inspired by vintage green monitors, bringing a classic look to your Visual Studio Code.
+![Main Interface](assets/screenshot_one.png)
+![Feature Highlight](assets/screenshot_two.png)
 
-## Features
-
-- Classic green-on-black color scheme
-- Easy on the eyes for long coding sessions
-- Perfect for retro enthusiasts and those who love a vintage aesthetic
+Retro Green Theme is a nostalgic theme inspired by vintage green monitors, bringing a classic look to your Visual Studio Code. Perfect for retro enthusiasts and those who love a vintage aesthetic, this theme offers a classic green-on-black color scheme that is easy on the eyes for long coding sessions. 
 
 ## Installation
 
@@ -18,12 +15,22 @@ Retro Green Theme is a nostalgic theme inspired by vintage green monitors, bring
 ## Usage
 
 1. Press `F5` to open a new window with your extension loaded.
-2. Open the color theme picker with the `File > Preferences > Theme > Color Theme` menu item, or use the `Preferences: Color Theme` command (`Ctrl+K Ctrl+T`) and pick your theme.
-3. Open a file that has a language associated. The language's configured grammar will tokenize the text and assign 'scopes' to the tokens. To examine these scopes, invoke the `Developer: Inspect Editor Tokens and Scopes` command from the Command Palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac).
+2. Open the color theme picker with the `File > Preferences > Theme > Color Theme` menu item, or use the `Preferences: Color Theme` command (`Ctrl+K Ctrl+T` on Windows/Linux, `Cmd+K Cmd+T` on Mac) and pick your theme.
+
+## Feedback
+
+This is just the beginning! Please give me your feedback so that we can work together to make this theme even more wonderful. Let's be a great community!
 
 ## Contributing
 
 If you have any suggestions or find any issues, please feel free to open an issue or submit a pull request.
+
+## Connect with Me
+
+- **GitHub:** [Lelin07](https://github.com/Lelin07)
+- **X (formerly Twitter):** [Dev_Lelin](https://x.com/Dev_Lelin)
+- **LinkedIn:** [Lelin Padhan](https://www.linkedin.com/in/lelin07/)
+- **Buy Me a Coffee:** [Lelin Padhan](https://www.buymeacoffee.com/lelin07)
 
 ## License
 
