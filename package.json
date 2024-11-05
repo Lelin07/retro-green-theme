@@ -2,7 +2,7 @@
   "name": "retro-green-theme-vscode",
   "displayName": "Retro Green Theme",
   "description": "A nostalgic theme inspired by vintage green monitor, binging a classic look to your VS CODE",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "LelinPadhan",
   "engines": {
     "vscode": "^1.95.0"
@@ -27,7 +27,7 @@
   "contributes": {
     "themes": [
       {
-        "label": "retro-green-theme",
+        "label": "Retro Green Theme",
         "uiTheme": "vs-dark",
         "path": "./themes/retro-green-theme-color-theme.json"
       }
@@ -38,9 +38,11 @@
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^11.0.0",
     "@semantic-release/npm": "^12.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.1",
     "semantic-release": "^24.2.0"
   }
 }
