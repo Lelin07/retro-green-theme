@@ -9,7 +9,6 @@ First off, thank you for considering contributing to Retro Green Theme! Your hel
   - [Suggesting Enhancements](#suggesting-enhancements)
   - [Submitting Pull Requests](#submitting-pull-requests)
 - [Code Style](#code-style)
-- [Documentation](#documentation)
 - [Code of Conduct](#code-of-conduct)
 - [Getting Help](#getting-help)
 
@@ -31,7 +30,7 @@ If you have an idea for an enhancement, please open an issue on GitHub with the 
 - A detailed description of the enhancement.
 - Any relevant screenshots or mockups.
 
-## Submitting Pull Requests
+### Submitting Pull Requests
 
 1. Fork the repository.
 2. Clone your forked repository:
@@ -57,8 +56,9 @@ Please ensure your pull request adheres to the following guidelines:
 
 - The pull request should include tests if applicable.
 - The pull request should pass all tests.
+- Use the provided [Pull Request Template](./.github/pull_request_template.md)
 
-### Code Style
+## Code Style
 
 Please follow the existing code style and conventions. Use linters and formatters to ensure consistency.
 
