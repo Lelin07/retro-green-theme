@@ -6,7 +6,7 @@
 
 <p align="center">
   <img src="https://github.com/Lelin07/retro-green-theme/actions/workflows/publish.yml/badge.svg?style=flat" alt="Build Status" height="25">
-  <img src="https://img.shields.io/github/package-json/v/Lelin07/retro-green-theme?style=flat&color=blue" alt="Version" height="25">
+  <img src="https://img.shields.io/visual-studio-marketplace/v/LelinPadhan.retro-green-theme-vscode?style=flat&color=blue" alt="Version" height="25">
   <img src="https://img.shields.io/github/license/Lelin07/retro-green-theme?style=flat&color=c28f02" alt="License" height="25">
   <img src="https://img.shields.io/visual-studio-marketplace/d/LelinPadhan.retro-green-theme-vscode?style=flat&color=262626" alt="Downloads" height="25">
   <img src="https://img.shields.io/github/last-commit/Lelin07/retro-green-theme?style=flat&color=01335e" alt="Last Commit" height="25">
