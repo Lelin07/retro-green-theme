@@ -16,7 +16,7 @@ jobs:
       - uses: actions/first-interaction@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          issue-message: "Welcome @${{ github.actor }}! 🎉 Thank you for opening your first issue! We’re excited to have you contribute to this project! Please check our [Contributing Guidelines](../CONTRIBUTING.md)."
+          issue-message: "Welcome @${{ github.actor }}! 🎉 Thank you for opening your first issue! We’re excited to have you contribute to this project! Please check our [Contributing Guidelines](https://github.com/Lelin07/retro-green-theme/blob/main/CONTRIBUTING.md)."
 
   auto-assign:
     runs-on: ubuntu-latest
