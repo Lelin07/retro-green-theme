@@ -1,4 +1,4 @@
-name: Greetings & Auto-Label
+name: Greetings
 
 on:
   issues:
@@ -37,11 +37,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignees: ${{ github.actor }}
-
-  auto-label:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Auto Label
-        uses: actions/labeler@v4
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
