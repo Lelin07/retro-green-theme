@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Lelin07/retro-green-theme/compare/v1.1.0...v1.1.1) (2024-11-21)
+
+
+### Bug Fixes
+
+* pull request template ([3d5cb9a](https://github.com/Lelin07/retro-green-theme/commit/3d5cb9aee83ed3352d2e2c0359ac80c7dfeceab6))
+
 # 1.0.0 (2024-11-04)
 
 
