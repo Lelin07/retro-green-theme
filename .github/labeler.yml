@@ -1,0 +1,15 @@
+bug:
+  - "bug"               
+  - "fix"               
+
+feature:
+  - "feature"           
+  - "enhancement"       
+
+documentation:
+  - "docs"             
+  - "documentation"     
+
+question:
+  - "question"          
+  - "help"              
