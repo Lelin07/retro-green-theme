@@ -1,7 +1,8 @@
-# Retro Green Theme
-
 <p align="center">
-  <img src="assets/icon.png" alt="Theme Icon" width="100" height="100">
+  <img src="assets/icon.png" alt="Theme Icon" width="100" height="100" >
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=40&pause=1000&color=46D999&background=121611&center=true&vCenter=true&width=500&height=100&lines=Retro+Green+Theme" alt="Typing SVG">
+  </a>
 </p>
 
 <p align="center">
