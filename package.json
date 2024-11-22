@@ -2,7 +2,7 @@
   "name": "retro-green-theme-vscode",
   "displayName": "Retro Green Theme",
   "description": "A nostalgic theme inspired by vintage green monitor, binging a classic look to your VS CODE",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "publisher": "LelinPadhan",
   "engines": {
     "vscode": "^1.95.0"

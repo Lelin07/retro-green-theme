@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Lelin07/retro-green-theme/compare/v1.1.1...v1.1.2) (2024-11-22)
+
+
+### Bug Fixes
+
+* **release:** disable npm publish in release configuration ([0d273a4](https://github.com/Lelin07/retro-green-theme/commit/0d273a43d40a337651f93439a0a714e1ffcff4f6))
+
 ## [1.1.1](https://github.com/Lelin07/retro-green-theme/compare/v1.1.0...v1.1.1) (2024-11-21)
 
 
