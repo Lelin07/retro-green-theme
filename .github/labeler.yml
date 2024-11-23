@@ -1,15 +1,59 @@
-bug:
-  - "bug"               
-  - "fix"               
+critical:
+  - "(critical|urgent)"
 
-feature:
-  - "feature"           
-  - "enhancement"       
+bug:
+  - "bug"
+  - "error"
+  - "fail"
+  - "issue"
+
+enhancement:
+  - "enhancement"
+  - "feature"
+  - "improvement"
 
 documentation:
-  - "docs"             
-  - "documentation"     
+  - "documentation"
+  - "docs"
+  - "readme"
 
 question:
-  - "question"          
-  - "help"              
+  - "question"
+  - "inquiry"
+  - "query"
+
+help wanted:
+  - "help wanted"
+  - "assistance"
+  - "support"
+
+good first issue:
+  - "good first issue"
+  - "beginner"
+  - "starter"
+
+wontfix:
+  - "wontfix"
+  - "not fix"
+  - "no fix"
+
+performance:
+  - "performance"
+  - "speed"
+  - "optimization"
+
+security:
+  - "security"
+  - "vulnerability"
+  - "secure"
+
+design:
+  - "design"
+  - "ui"
+  - "ux"
+  - "interface"
+
+accessibility:
+  - "accessibility"
+  - "a11y"
+  - "inclusive"
