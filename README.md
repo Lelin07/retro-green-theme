@@ -1,7 +1,6 @@
-<p align="center">
-  <img src="assets/icon.png" alt="Theme Icon" width="100" height="100" >
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=40&pause=1000&color=46D999&background=121611&center=true&vCenter=true&width=500&height=100&lines=Retro+Green+Theme" alt="Typing SVG">
+<p align="center"> 
+ <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=40&pause=1000&color=46D999&background=121611&center=true&vCenter=true&width=800&height=100&lines=Retro+Green+Theme" alt="Typing SVG">
   </a>
 </p>
 
@@ -16,7 +15,11 @@
 ![Main Interface](assets/screenshot_one.png)
 ![Feature Highlight](assets/screenshot_two.png)
 
-[Retro Green Theme](https://marketplace.visualstudio.com/items?itemName=LelinPadhan.retro-green-theme-vscode) is a nostalgic theme inspired by vintage green monitors, bringing a classic look to your Visual Studio Code. Perfect for retro enthusiasts and those who love a vintage aesthetic, this theme offers a classic green-on-black color scheme that is easy on the eyes for long coding sessions. 
+<p align="center">
+  <img src="assets/icon.png" alt="Theme Icon" width="100" height="100">
+</p>
+
+[Retro Green Theme](https://marketplace.visualstudio.com/items?itemName=LelinPadhan.retro-green-theme-vscode) is a nostalgic theme inspired by vintage green monitors, bringing a classic look to your Visual Studio Code. Perfect for retro enthusiasts and those who love a vintage aesthetic, this theme offers a classic green-on-black color scheme that is easy on the eyes for long coding sessions.
 
 ## Table of Contents
 
@@ -72,4 +75,5 @@ If you have any suggestions or find any issues, please feel free to open an issu
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
 <p align="center">Made with ❤️ in India</p>
