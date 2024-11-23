@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Lelin07/retro-green-theme/compare/v1.1.2...v1.1.3) (2024-11-23)
+
+
+### Bug Fixes
+
+* update color theme settings for improved visibility and consistency ([fb06b81](https://github.com/Lelin07/retro-green-theme/commit/fb06b81bc1137816f986ffa4e0986c1c85b2042f))
+
 ## [1.1.2](https://github.com/Lelin07/retro-green-theme/compare/v1.1.1...v1.1.2) (2024-11-22)
 
 
