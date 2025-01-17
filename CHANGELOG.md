@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/Lelin07/retro-green-theme/compare/v1.1.3...v1.1.4) (2025-01-17)
+
+
+### Bug Fixes
+
+* adjust line highlight border and terminal cursor colors for consistency ([86e4067](https://github.com/Lelin07/retro-green-theme/commit/86e40673230ea185d93231aa4f77ee9f6d4e3dd3))
+
 ## [1.1.3](https://github.com/Lelin07/retro-green-theme/compare/v1.1.2...v1.1.3) (2024-11-23)
 
 
