@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/Lelin07/retro-green-theme/compare/v1.1.4...v1.1.5) (2025-04-19)
+
+
+### Bug Fixes
+
+* update icon image for improved visual consistency ([581b91a](https://github.com/Lelin07/retro-green-theme/commit/581b91adc0da5c84fc1c2836bb2a319ada8dd848))
+
 ## [1.1.4](https://github.com/Lelin07/retro-green-theme/compare/v1.1.3...v1.1.4) (2025-01-17)
 
 
