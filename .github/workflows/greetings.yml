@@ -37,3 +37,19 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           assignees: ${{ github.actor }}
+
+  issue-auto-reply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-reply to new issue
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issueNumber = context.payload.issue.number;
+            const issueComment = "Thank you for opening this issue! We will review it as soon as possible. If you have any additional details or updates, feel free to add them here.";
+            await github.issues.createComment({
+              ...context.repo,
+              issue_number: issueNumber,
+              body: issueComment
+            });
