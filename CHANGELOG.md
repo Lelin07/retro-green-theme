@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/Lelin07/retro-green-theme/compare/v1.1.5...v1.1.6) (2026-02-20)
+
+
+### Bug Fixes
+
+* **theme:** improve intellisense keyboard selection contrast ([b24876d](https://github.com/Lelin07/retro-green-theme/commit/b24876de8853f6fb7f6dcbe6dca65bd216bd30d6))
+
 ## [1.1.5](https://github.com/Lelin07/retro-green-theme/compare/v1.1.4...v1.1.5) (2025-04-19)
 
 
