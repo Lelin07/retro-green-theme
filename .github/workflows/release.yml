@@ -74,23 +74,42 @@ jobs:
 
       - name: Detect if a semantic release is needed
         id: detect-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           set -euo pipefail
-          LOG_FILE="$(mktemp)"
-
-          npx semantic-release --dry-run | tee "$LOG_FILE"
-
-          if grep -q "There are no relevant changes, so no new version is released." "$LOG_FILE"; then
-            echo "should_release=false" >> "$GITHUB_OUTPUT"
-            echo "No release required for this commit."
-          else
-            echo "should_release=true" >> "$GITHUB_OUTPUT"
-            echo "Release required for this commit."
+          LAST_TAG="$(git describe --tags --abbrev=0 --match 'v*' 2>/dev/null || true)"
+          RANGE="HEAD"
+          if [ -n "$LAST_TAG" ]; then
+            RANGE="${LAST_TAG}..HEAD"
           fi
+
+          SHOULD_RELEASE="false"
+          for SHA in $(git rev-list --no-merges "$RANGE"); do
+            SUBJECT="$(git log -n 1 --format=%s "$SHA")"
+            BODY="$(git log -n 1 --format=%b "$SHA")"
+
+            if echo "$SUBJECT" | grep -Eq '^(feat|fix|perf)(\([^)]+\))?:'; then
+              SHOULD_RELEASE="true"
+              break
+            fi
+
+            if echo "$SUBJECT" | grep -Eq '^[a-zA-Z0-9_-]+(\([^)]+\))?!:'; then
+              SHOULD_RELEASE="true"
+              break
+            fi
+
+            if echo "$SUBJECT" | grep -Eq '^revert:'; then
+              SHOULD_RELEASE="true"
+              break
+            fi
+
+            if echo "$BODY" | grep -q 'BREAKING CHANGE'; then
+              SHOULD_RELEASE="true"
+              break
+            fi
+          done
+
+          echo "should_release=${SHOULD_RELEASE}" >> "$GITHUB_OUTPUT"
+          echo "Release needed: ${SHOULD_RELEASE}"
 
   release:
     needs: preflight

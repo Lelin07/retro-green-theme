@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       tag:
-        description: Existing release tag to retry publish (example: v1.1.6)
+        description: "Existing release tag to retry publish (example: v1.1.6)"
         required: true
         type: string
 
@@ -12,7 +12,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: release-retry-${{ inputs.tag }}
+  group: release-retry
   cancel-in-progress: false
 
 jobs:
