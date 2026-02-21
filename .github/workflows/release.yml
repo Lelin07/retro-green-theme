@@ -87,7 +87,7 @@ jobs:
             SUBJECT="$(git log -n 1 --format=%s "$SHA")"
             BODY="$(git log -n 1 --format=%b "$SHA")"
 
-            if echo "$SUBJECT" | grep -Eq '^(feat|fix|perf)(\([^)]+\))?:'; then
+            if echo "$SUBJECT" | grep -Eq '^(feat|fix|perf|FEAT|FIX)(\([^)]+\))?:'; then
               SHOULD_RELEASE="true"
               break
             fi
