@@ -48,8 +48,9 @@ jobs:
           script: |
             const issueNumber = context.payload.issue.number;
             const issueComment = "Thank you for opening this issue! We will review it as soon as possible. If you have any additional details or updates, feel free to add them here.";
-            await github.issues.createComment({
-              ...context.repo,
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
               issue_number: issueNumber,
               body: issueComment
             });
