@@ -102,6 +102,11 @@ jobs:
               break
             fi
 
+            if echo "$SUBJECT" | grep -Eq '^Revert "' && echo "$BODY" | grep -q 'This reverts commit '; then
+              SHOULD_RELEASE="true"
+              break
+            fi
+
             if echo "$BODY" | grep -q 'BREAKING CHANGE'; then
               SHOULD_RELEASE="true"
               break
