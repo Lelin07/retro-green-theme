@@ -19,8 +19,9 @@ module.exports = {
     [
       "@semantic-release/exec",
       {
-        prepareCmd: "vsce package",
-        publishCmd: "vsce publish --pat $VSCE_TOKEN",
+        verifyConditionsCmd: "npx vsce verify-pat -p $VSCE_TOKEN",
+        prepareCmd: "npx vsce package --no-yarn",
+        publishCmd: "npx vsce publish --pat $VSCE_TOKEN",
       },
     ],
     "@semantic-release/github",
