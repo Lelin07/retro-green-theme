@@ -27,6 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release_sha: ${{ steps.resolve-sha.outputs.release_sha }}
+      should_release: ${{ steps.detect-release.outputs.should_release }}
     steps:
       - name: Resolve release commit SHA
         id: resolve-sha
@@ -41,6 +42,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ steps.resolve-sha.outputs.release_sha }}
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -70,8 +72,29 @@ jobs:
           VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
         run: npx vsce verify-pat -p "$VSCE_TOKEN"
 
+      - name: Detect if a semantic release is needed
+        id: detect-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          LOG_FILE="$(mktemp)"
+
+          npx semantic-release --dry-run | tee "$LOG_FILE"
+
+          if grep -q "There are no relevant changes, so no new version is released." "$LOG_FILE"; then
+            echo "should_release=false" >> "$GITHUB_OUTPUT"
+            echo "No release required for this commit."
+          else
+            echo "should_release=true" >> "$GITHUB_OUTPUT"
+            echo "Release required for this commit."
+          fi
+
   release:
     needs: preflight
+    if: needs.preflight.outputs.should_release == 'true'
     runs-on: ubuntu-latest
     environment:
       name: marketplace-prod
