@@ -1,0 +1,102 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows:
+      - CI
+    types:
+      - completed
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-main
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    if: >
+      (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main') ||
+      (github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'main')
+    runs-on: ubuntu-latest
+    outputs:
+      release_sha: ${{ steps.resolve-sha.outputs.release_sha }}
+    steps:
+      - name: Resolve release commit SHA
+        id: resolve-sha
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_run" ]; then
+            echo "release_sha=${{ github.event.workflow_run.head_sha }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "release_sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.resolve-sha.outputs.release_sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate required secrets
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${VSCE_TOKEN:-}" ]; then
+            echo "::error::Missing required secret: VSCE_TOKEN"
+            exit 1
+          fi
+
+          if [ -z "${NPM_TOKEN:-}" ]; then
+            echo "::notice::NPM_TOKEN not set (optional because npm publish is disabled)."
+          fi
+
+      - name: Verify VS Marketplace PAT
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+        run: npx vsce verify-pat -p "$VSCE_TOKEN"
+
+  release:
+    needs: preflight
+    runs-on: ubuntu-latest
+    environment:
+      name: marketplace-prod
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.preflight.outputs.release_sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
